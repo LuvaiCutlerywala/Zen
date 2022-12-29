@@ -2,7 +2,8 @@
 
 #include <cstdint>
 #include <vector>
-#include <array>
+
+#include "ImageComponents.hpp"
 
 #ifndef BMPFILEHEADERS_H
 #define BMPFILEHEADERS_H
@@ -44,8 +45,6 @@ struct __attribute__((__packed__)) COLOURTABLE
     uint8_t reserved;
 
 };
-
-typedef std::array<uint8_t, 3> PIXELARRAY;
 
 struct PIXELDATA
 {
