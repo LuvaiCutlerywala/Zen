@@ -45,10 +45,10 @@ void extractChannel(std::vector<PIXELARRAY>* pixels, std::vector<uint8_t>* buffe
     }
 }
 
-void recreateTriColourMatrix(std::vector<uint8_t>* r_channel, 
-                             std::vector<uint8_t>* g_channel, 
-                             std::vector<uint8_t>* b_channel,
-                             std::vector<PIXELARRAY>* matrix)
+void recreateColourMatrix(std::vector<uint8_t>* r_channel, 
+                          std::vector<uint8_t>* g_channel, 
+                          std::vector<uint8_t>* b_channel,
+                          std::vector<PIXELARRAY>* matrix)
 {
     Iris::logWarnIfFalse((r_channel->size() == g_channel->size()) && (r_channel->size() == b_channel->size()),
                          "Channel dimensions are not equal.");

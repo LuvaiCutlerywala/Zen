@@ -3,6 +3,7 @@
 #include "BMPImage.hpp"
 #include "BMPFileContent.hpp"
 #include "../include/Iris.hpp"
+#include "ImageProcessor.hpp"
 #include <string>
 #include <iostream>
 
@@ -50,7 +51,7 @@ int main()
     BMPFILEHEADER fileHeader;
     BMPINFOHEADER infoHeader;
     COLOURTABLE colourTable;
-    PIXELDATA pixels;
+    PIXELDATA originalPixels;
 
     reader.readFileHeader(&fileHeader);
     Iris::info("Read image file header.");
@@ -58,12 +59,26 @@ int main()
     Iris::info("Read image info header.");
     reader.readColourTable(&colourTable);
     Iris::info("Read image colour table.");
-    reader.readPixelData(&pixels, infoHeader.biSizeImage);
+    reader.readPixelData(&originalPixels, infoHeader.biSizeImage);
     Iris::info("Read image pixel data.");
 
-    images::BMPIMAGE image(fileHeader, infoHeader, colourTable, pixels);
+    logFileHeaders(&fileHeader, &infoHeader, &colourTable, &originalPixels);
 
-    logFileHeaders(&fileHeader, &infoHeader, &colourTable, &pixels);
+    std::vector<uint8_t> r_channel, g_channel, b_channel;
+    
+    processors::extractBlue(&(originalPixels.pixelData), &b_channel);
+    processors::extractGreen(&(originalPixels.pixelData), &g_channel);
+    processors::extractRed(&(originalPixels.pixelData), &r_channel);
+
+    Iris::info("Extracted RGB channels from image.");
+
+    PIXELDATA reconstructedPixels;
+
+    processors::recreateColourMatrix(&r_channel, &g_channel, &b_channel, &(reconstructedPixels.pixelData));
+
+    Iris::info("Reconstructed colour matrix with RGB channels.");
+
+    images::BMPIMAGE image(fileHeader, infoHeader, colourTable, reconstructedPixels);
 
     imageIO::BMPWRITER writer(dest_filename);
     Iris::info("Writing to file: " + dest_filename + "...");

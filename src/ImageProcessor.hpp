@@ -25,10 +25,10 @@ namespace processors
     void groupPixelUnits(std::vector<uint8_t>* buffer, PIXELDATA* pixelData);
     void ungroupPixelUnits(std::vector<uint8_t>* buffer, PIXELDATA* pixelData);
     
-    void recreateTriColourMatrix(std::vector<uint8_t>* r_channel, 
-                                 std::vector<uint8_t>* g_channel, 
-                                 std::vector<uint8_t>* b_channel,
-                                 std::vector<PIXELARRAY>* matrix);
+    void recreateColourMatrix(std::vector<uint8_t>* r_channel, 
+                              std::vector<uint8_t>* g_channel, 
+                              std::vector<uint8_t>* b_channel,
+                              std::vector<PIXELARRAY>* matrix);
 }
 
 #endif
