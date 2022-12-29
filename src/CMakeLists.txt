@@ -8,6 +8,8 @@ set(src_files
     ImageWriter.cpp
     ImageProcessor.hpp
     ImageProcessor.cpp
+    Filters.hpp
+    Filters.cpp
     main.cpp
 )
 

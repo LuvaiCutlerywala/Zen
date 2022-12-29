@@ -5,7 +5,7 @@ void processors::groupPixelUnits(std::vector<uint8_t>* buffer, PIXELDATA* pixelD
 {
     for(uint32_t i = 0; i < buffer->size(); i += 3)
     {
-        PIXELARRAY pixel = {buffer->at(i + RED), (i + GREEN), (i + BLUE)};
+        PIXELARRAY pixel = {buffer->at(i + RED), buffer->at(i + GREEN), buffer->at(i + BLUE)};
         pixelData->pixelData.push_back(pixel);
     }
 }

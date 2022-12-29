@@ -6,7 +6,7 @@
 #include <string>
 #include <iostream>
 
-void logFileHeaders(BMPFILEHEADER* fileHeader, BMPINFOHEADER* infoHeader)
+void logFileHeaders(BMPFILEHEADER* fileHeader, BMPINFOHEADER* infoHeader, COLOURTABLE* colourTable, PIXELDATA* pixelData)
 {
     const std::string filename = "../../log.txt";
 
@@ -29,6 +29,15 @@ void logFileHeaders(BMPFILEHEADER* fileHeader, BMPINFOHEADER* infoHeader)
     Iris::logInfoToFile("Pels in the Y direction: " + std::to_string(infoHeader->biYPelsPerMetre), filename);
     Iris::logInfoToFile("Colours Used: " + std::to_string(infoHeader->biClrUsed), filename);
     Iris::logInfoToFile("Important Colours: " + std::to_string(infoHeader->biClrImportant), filename);
+
+    Iris::logInfoToFile("Colour table: ", filename);
+    Iris::logInfoToFile("Blue: " + std::to_string(colourTable->blue), filename);
+    Iris::logInfoToFile("Green: " + std::to_string(colourTable->green), filename);
+    Iris::logInfoToFile("Red: " + std::to_string(colourTable->red), filename);
+    Iris::logInfoToFile("Reserved: " + std::to_string(colourTable->reserved), filename);
+
+    Iris::logInfoToFile("Pixel data: ", filename);
+    Iris::logInfoToFile("Pixel data size: " + std::to_string(pixelData->pixelData.size()), filename);
 }
 
 int main()
@@ -53,6 +62,8 @@ int main()
     Iris::info("Read image pixel data.");
 
     images::BMPIMAGE image(fileHeader, infoHeader, colourTable, pixels);
+
+    logFileHeaders(&fileHeader, &infoHeader, &colourTable, &pixels);
 
     imageIO::BMPWRITER writer(dest_filename);
     Iris::info("Writing to file: " + dest_filename + "...");
