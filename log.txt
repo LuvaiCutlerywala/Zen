@@ -1,0 +1,25 @@
+Fri Dec 30 12:12:53 2022 [INFO] : BMP file headers: 
+Fri Dec 30 12:12:53 2022 [INFO] : Type: 19778
+Fri Dec 30 12:12:53 2022 [INFO] : Size: 786570
+Fri Dec 30 12:12:53 2022 [INFO] : Reserved Bits 1: 0
+Fri Dec 30 12:12:53 2022 [INFO] : Reserved Bits 2: 0
+Fri Dec 30 12:12:53 2022 [INFO] : Bit Offset: 138
+Fri Dec 30 12:12:53 2022 [INFO] : BMP info headers: 
+Fri Dec 30 12:12:53 2022 [INFO] : Header Size: 124
+Fri Dec 30 12:12:53 2022 [INFO] : Image width: 512
+Fri Dec 30 12:12:53 2022 [INFO] : Image height: 512
+Fri Dec 30 12:12:53 2022 [INFO] : Image planes: 1
+Fri Dec 30 12:12:53 2022 [INFO] : Colour bit count: 24
+Fri Dec 30 12:12:53 2022 [INFO] : Image Compression: 0
+Fri Dec 30 12:12:53 2022 [INFO] : Image Size: 786432
+Fri Dec 30 12:12:53 2022 [INFO] : Pels in the X direction: 2835
+Fri Dec 30 12:12:53 2022 [INFO] : Pels in the Y direction: 2835
+Fri Dec 30 12:12:53 2022 [INFO] : Colours Used: 0
+Fri Dec 30 12:12:53 2022 [INFO] : Important Colours: 0
+Fri Dec 30 12:12:53 2022 [INFO] : Colour table: 
+Fri Dec 30 12:12:53 2022 [INFO] : Blue: 0
+Fri Dec 30 12:12:53 2022 [INFO] : Green: 0
+Fri Dec 30 12:12:53 2022 [INFO] : Red: 255
+Fri Dec 30 12:12:53 2022 [INFO] : Reserved: 0
+Fri Dec 30 12:12:53 2022 [INFO] : Pixel data: 
+Fri Dec 30 12:12:53 2022 [INFO] : Pixel data size: 262144

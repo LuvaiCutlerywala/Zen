@@ -22,17 +22,17 @@ void processors::ungroupPixelUnits(std::vector<uint8_t>* buffer, std::vector<PIX
     }
 }
 
-void extractBlue(std::vector<PIXELARRAY>* pixels, std::vector<uint8_t>* b_channel)
+void processors::extractBlue(std::vector<PIXELARRAY>* pixels, std::vector<uint8_t>* b_channel)
 {
     extractChannel(pixels, b_channel, BLUE);
 }
 
-void extractGreen(std::vector<PIXELARRAY>* pixels, std::vector<uint8_t>* g_channel)
+void processors::extractGreen(std::vector<PIXELARRAY>* pixels, std::vector<uint8_t>* g_channel)
 {
     extractChannel(pixels, g_channel, GREEN);
 }
 
-void extractRed(std::vector<PIXELARRAY>* pixels, std::vector<uint8_t>* r_channel)
+void processors::extractRed(std::vector<PIXELARRAY>* pixels, std::vector<uint8_t>* r_channel)
 {
     extractChannel(pixels, r_channel, RED);
 }
@@ -45,7 +45,7 @@ void extractChannel(std::vector<PIXELARRAY>* pixels, std::vector<uint8_t>* buffe
     }
 }
 
-void recreateColourMatrix(std::vector<uint8_t>* r_channel, 
+void processors::recreateColourMatrix(std::vector<uint8_t>* r_channel, 
                           std::vector<uint8_t>* g_channel, 
                           std::vector<uint8_t>* b_channel,
                           std::vector<PIXELARRAY>* matrix)
