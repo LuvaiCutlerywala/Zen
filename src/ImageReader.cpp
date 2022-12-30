@@ -73,6 +73,6 @@ void BMPREADER::readPixelData(PIXELDATA* pixelData, uint32_t imageSize)
     std::vector<uint8_t> buffer(imageSize);
     m_fstream.read(reinterpret_cast<char*>(buffer.data()), imageSize);
 
-    processors::groupPixelUnits(&buffer, pixelData);
+    processors::groupPixelUnits(&buffer, &(pixelData->pixelData));
 
 }
