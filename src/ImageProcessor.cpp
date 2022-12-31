@@ -58,3 +58,10 @@ void processors::recreateColourMatrix(std::vector<uint8_t>* r_channel,
         matrix->push_back({r_channel->at(i), g_channel->at(i), b_channel->at(i)});
     }
 }
+
+void processors::getImageMatrix(std::vector<std::vector<uint8_t>>* imageMatrix, 
+                                std::vector<uint8_t>* channel, 
+                                uint32_t width, uint32_t height)
+{
+    
+}

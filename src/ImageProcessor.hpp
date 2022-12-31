@@ -64,6 +64,16 @@ namespace processors
                               std::vector<uint8_t>* g_channel, 
                               std::vector<uint8_t>* b_channel,
                               std::vector<PIXELARRAY>* matrix);
+
+
+    /**
+     * @brief Structures the image channel into a matrix with dimensions imageWidth x imageHeight.
+     * @param imageMatrix The container for the image matrix.
+     * @param channel The container for the channel data.
+     * @param width The width of the image matrix, therefore the image.
+     * @param height The height of the image matrix, therefore the image.
+    */
+    void getImageMatrix(std::vector<std::vector<uint8_t>>* imageMatrix, std::vector<uint8_t>* channel, uint32_t width, uint32_t height);
 }
 
 #endif
