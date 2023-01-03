@@ -12,4 +12,6 @@
 ## TODO code stuff
 ---
  - [x] Fix the segmentation fault in the BMPHEADER deserialisation methods.
- - [ ] Implement and test the Lanczos interpolator into the main code.
+ - [ ] Rewrite the current processors with the Matrix class.
+ - [ ] Complete the Convolver class.
+ - [ ] Test the convolution methods with the Gaussian and Box blur.

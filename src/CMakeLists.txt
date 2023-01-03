@@ -10,6 +10,10 @@ set(src_files
     ImageProcessor.cpp
     Filters.hpp
     Filters.cpp
+    Convolver.hpp
+    Convolver.cpp
+    Matrix.hpp
+    Matrix.cpp
     main.cpp
 )
 

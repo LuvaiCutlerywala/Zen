@@ -63,5 +63,13 @@ void processors::getImageMatrix(std::vector<std::vector<uint8_t>>* imageMatrix,
                                 std::vector<uint8_t>* channel, 
                                 uint32_t width, uint32_t height)
 {
-    
+    uint64_t pos = 0;
+    for(uint32_t i = 0; i < width; ++i)
+    {
+        for(uint32_t j = 0; j < height; ++j)
+        {
+            imageMatrix->at(i).push_back(channel->at(pos));
+            pos++;
+        }
+    }
 }

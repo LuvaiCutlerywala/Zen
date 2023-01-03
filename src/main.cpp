@@ -4,6 +4,7 @@
 #include "BMPFileContent.hpp"
 #include "../include/Iris.hpp"
 #include "ImageProcessor.hpp"
+#include "Matrix.hpp"
 #include <string>
 #include <iostream>
 
@@ -40,6 +41,7 @@ void logFileHeaders(BMPFILEHEADER* fileHeader, BMPINFOHEADER* infoHeader, COLOUR
     Iris::logInfoToFile("Pixel data: ", filename);
     Iris::logInfoToFile("Pixel data size: " + std::to_string(pixelData->pixelData.size()), filename);
 }
+
 
 int main()
 {
