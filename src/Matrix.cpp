@@ -1,25 +1,51 @@
 #include "Matrix.hpp"
+#include <algorithm>
 
-template <class T, int rows, int columns>
-MATRIX<T, rows, columns>::MATRIX()
+template <typename T>
+MATRIX<T>::MATRIX(uint32_t rows, uint32_t columns)
+    : m_rows(rows), m_columns(columns)
 {
-    this->m_matrix = new std::array<std::array<T, rows>, columns>();
+    this->m_container = new std::vector<T>(rows * columns);
 }
 
-template <class T, int rows, int columns>
-MATRIX<T, rows, columns>::~MATRIX()
+template <typename T>
+MATRIX<T>::~MATRIX()
 {
-    delete this->m_matrix;    
+    delete this->m_container;
 }
 
-template <class T, int rows, int columns>
-T MATRIX<T, rows, columns>::get(uint32_t row, uint32_t column)
+template <typename T>
+T MATRIX<T>::get(uint32_t row, uint32_t column)
 {
-    return this->m_matrix[column][row];
+    return this->m_container.at((row * column) - 1);
 }
 
-template <class T, int rows, int columns>
-void MATRIX<T, rows, columns>::set(T element, uint32_t row, uint32_t column)
+template <typename T>
+void MATRIX<T>::setElement(T element, uint32_t row, uint32_t column)
 {
-    this->m_matrix[column][row] = element;
+    this->m_container.insert((row * column) - 1, element);
+}
+
+template <typename T>
+void MATRIX<T>::setMatrix(std::vector<T> container)
+{
+    std::copy(container.begin(), container.end(), std::back_inserter(this->m_container));
+}
+
+template <typename T>
+uint32_t MATRIX<T>::getRows()
+{
+    return this->m_rows;
+}
+
+template <typename T>
+uint32_t MATRIX<T>::getColumns()
+{
+    return this->m_columns;
+}
+
+template <typename T>
+uint64_t MATRIX<T>::size()
+{
+    return this->m_container.size();
 }
