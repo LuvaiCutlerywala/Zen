@@ -46,7 +46,6 @@ void logFileHeaders(BMPFILEHEADER* fileHeader, BMPINFOHEADER* infoHeader, COLOUR
 
 int main()
 {
-    /*
     std::string filename = "/mnt/c/Users/luvai_kcrxbon/C++Projects/upscaler/image/test-image.bmp";
     std::string dest_filename = "/mnt/c/Users/luvai_kcrxbon/C++projects/upscaler/image/processed-image.bmp";
     Iris::info("Reading from file: " + filename + "...");
@@ -96,18 +95,4 @@ int main()
     writer.writePixelData(image.getPixelData());
     Iris::info("Written image pixel data.");
     return 0;
-    */
-
-    MATRIX<uint8_t> matrix(3, 3);
-    std::vector<uint8_t> vec(9);
-    std::iota(vec.begin(), vec.end(), 0);
-    matrix.setMatrix(vec);
-
-    for(int i = 1; i <= matrix.getRows(); ++i)
-    {
-        for(int j = 1; j <= matrix.getColumns(); ++j)
-        {
-            Iris::info("Matrix entry: " + std::to_string(matrix.get(i, j)));
-        }
-    }
 }

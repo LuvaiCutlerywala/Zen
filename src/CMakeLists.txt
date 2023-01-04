@@ -13,7 +13,6 @@ set(src_files
     Convolver.hpp
     Convolver.cpp
     Matrix.hpp
-    Matrix.cpp
     main.cpp
 )
 
