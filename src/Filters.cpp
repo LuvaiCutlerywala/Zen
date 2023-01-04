@@ -5,7 +5,7 @@
 
 using namespace processors;
 
-void GAUSSIANFILTER::getFilterMatrix(std::vector<std::vector<uint8_t>>* filterMatrix, int x, int y)
+void GAUSSIANFILTER::getFilterMatrix(MATRIX<uint8_t>* filterMatrix, int x, int y)
 {
     assert(x % 2 != 0 && y % 2 != 0);
 
@@ -15,7 +15,7 @@ void GAUSSIANFILTER::getFilterMatrix(std::vector<std::vector<uint8_t>>* filterMa
     {
         for(int j = 0; j < x; ++j)
         {
-            filterMatrix->at(i).push_back(gaussianKernel(i, j, SIGMA));
+            filterMatrix->setElement(gaussianKernel(i, j, SIGMA), (i + 1), (j + 1));
         }
     }
 }
@@ -25,7 +25,7 @@ double GAUSSIANFILTER::gaussianKernel(int x, int y, int sigma)
     return exp(-1 * (pow(x, 2) + pow(y, 2)) / (2 * pow(sigma, 2))) / (2 * M_PI * pow(sigma, 2));
 }
 
-void BOXFILTER::getFilterMatrix(std::vector<std::vector<uint8_t>>* filterMatrix, int x, int y, int blur)
+void BOXFILTER::getFilterMatrix(MATRIX<uint8_t>* filterMatrix, int x, int y, uint8_t blur)
 {
     assert(x % 2 != 0 && y % 2 != 0);
 
@@ -33,7 +33,7 @@ void BOXFILTER::getFilterMatrix(std::vector<std::vector<uint8_t>>* filterMatrix,
     {
         for(int j = 0; j < x; ++j)
         {
-            filterMatrix->at(i).push_back(blur);
+            filterMatrix->setElement(blur, (i + 1), (j + 1));
         }
     }
 }

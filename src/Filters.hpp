@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <vector>
+#include "Matrix.hpp"
 
 #ifndef FILTERS_H
 #define FILTERS_H
@@ -26,7 +27,7 @@ namespace processors
          * @param x The size of the matrix in the xth dimension.
          * @param y The size of the matrix in the yth dimension.
         */
-        static void getFilterMatrix(std::vector<std::vector<uint8_t>>* filterMatrix, int x, int y);
+        static void getFilterMatrix(MATRIX<uint8_t>* filterMatrix, int x, int y);
 
         private:
         /**
@@ -58,7 +59,7 @@ namespace processors
          * @param y The size of the matrix in the yth dimension.
          * @param blur The weight assigned to each pixel that the filter matrix is convolved with.
         */
-        static void getFilterMatrix(std::vector<std::vector<uint8_t>>* filterMatrix, int x, int y, int blur);
+        static void getFilterMatrix(MATRIX<uint8_t>* filterMatrix, int x, int y, uint8_t blur);
     };
 }
 

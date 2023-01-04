@@ -7,6 +7,10 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
+/**
+ * @brief A class to represent matrices in C++. Matrices are an algebraic structure, which they can provide some structure
+ *        to any set of algebraic elements.
+*/
 template <typename T>
 class MATRIX
 {
